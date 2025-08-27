@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Solutions - Professional Electrical Services</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS will be placed here */
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --primary-yellow: #FFD300;
+            --secondary-teal: #0e7490;
+            --accent-orange: #f97316;
+            --black: #111111;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--secondary-teal), var(--primary-blue));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--black);
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-teal));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(17, 17, 17, 0.95);
+            color: var(--white);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-yellow), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo span {
+            color: var(--white);
+            -webkit-text-fill-color: var(--white);
+        }
+        /* Logo Styles */
+.logo-img {
+    height: 50px; /* Adjust based on your logo's proportions */
+    width: auto;
+}
+
+.footer-logo {
+    height: 40px; /* Slightly smaller for footer */
+    width: auto;
+    margin-bottom: 20px;
+}
+
+/* For responsive design */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 40px;
+    }
+    
+    .footer-logo {
+        height: 35px;
+    }
+}
+
+        .nav-menu {
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin: 0 15px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-yellow), var(--accent-orange));
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+            background: linear-gradient(135deg, var(--primary-yellow), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Services Highlights */
+        .services-highlights {
+            background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-teal));
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--black);
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--black);
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Services Section */
+        .services-details {
+            background: linear-gradient(to bottom, #e2e8f0, #f8fafc);
+        }
+
+        .services-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-detail {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-detail:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-detail h3 {
+            color: var(--black);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+        }
+
+        .service-detail i {
+            margin-right: 10px;
+            color: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .project-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .project-item:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-overlay h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .project-overlay p {
+            color: var(--primary-yellow);
+            font-weight: 500;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-lightbox:hover {
+            color: var(--primary-yellow);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(to bottom, #0e7490, #2563eb);
+            color: var(--white);
+        }
+
+        .contact-section .section-title h2 {
+            color: var(--white);
+        }
+
+        .contact-section .section-title p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-info h3 {
+            color: var(--primary-yellow);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail i {
+            font-size: 1.5rem;
+            color: var(--primary-yellow);
+            margin-right: 15px;
+            width: 30px;
+        }
+
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form h3 {
+            color: var(--primary-yellow);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-yellow);
+        }
+
+        .error {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #111827, #1f2937);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--primary-yellow);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--black);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .services-content,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="">
+                <img src="IMG-20250819-WA0173.jpg" alt="Logo" class="logo-img">
+            </a>
+            <a href="#" class="logo">Electrical <span>Solutions</span></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Expert Electrical Solutions for Your Home and Business!</h1>
+            <p>Professional, reliable, and efficient electrical services tailored to meet your specific needs</p>
+            <a href="#contact" class="btn">Get in Contact</a>
+        </div>
+    </section>
+
+    <!-- Services Highlights -->
+    <section class="section services-highlights">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Specializations</h2>
+                <p>Comprehensive electrical solutions for residential and commercial clients</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Maintenance</h3>
+                    <p>Professional maintenance services to keep your electrical systems running smoothly</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Solar Installation</h3>
+                    <p>Eco-friendly solar solutions to reduce your energy costs and carbon footprint</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>CCTV Installation</h3>
+                    <p>Advanced security systems to protect your property and give you peace of mind</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>AC Services</h3>
+                    <p>Expert installation and maintenance of air conditioning systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Learn more about our company and our commitment to excellence</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>Professional Electrical Services Since 2010</h2>
+                    <p>Electrical Solutions is a leading provider of electrical services in Yaoundé, Cameroon. With over a decade of experience, we have built a reputation for excellence, reliability, and professionalism.</p>
+                    <p>Our team of certified electricians is dedicated to delivering high-quality workmanship and exceptional customer service. We stay up-to-date with the latest industry trends and technologies to provide our clients with the best possible solutions.</p>
+                    <p>At Electrical Solutions, we are committed to safety, quality, and customer satisfaction. Whether you need electrical repairs, installations, or maintenance services, you can count on us to get the job done right.</p>
+                    <a href="#services" class="btn">Our Services</a>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Electrician at work">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-details">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive electrical solutions for all your needs</p>
+            </div>
+            <div class="services-content">
+                <div class="service-detail fade-in">
+                    <img src="https://images.unsplash.com/photo-1585730061512-300e343a2c28?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Electrical Maintenance" class="service-image">
+                    <h3><i class="fas fa-bolt"></i> Electricity and Electronic Maintenance</h3>
+                    <p>We provide comprehensive maintenance services for all types of electrical and electronic systems, ensuring optimal performance and longevity.</p>
+                </div>
+                <div class="service-detail fade-in">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Transmission and Distribution" class="service-image">
+                    <h3><i class="fas fa-bolt"></i> Transmission and Distribution</h3>
+                    <p>Expert solutions for power transmission and distribution systems, designed to maximize efficiency and reliability.</p>
+                </div>
+                <div class="service-detail fade-in">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CCTV Installation" class="service-image">
+                    <h3><i class="fas fa-video"></i> CCTV Camera Installation and Maintenance</h3>
+                    <p>Professional installation and maintenance of CCTV security systems to protect your property and assets.</p>
+                </div>
+                <div class="service-detail fade-in">
+                    <img src="https://images.unsplash.com/photo-1592928307836-ee50c5a0d6ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Antenna Installation" class="service-image">
+                    <h3><i class="fas fa-satellite"></i> Antenna Installation</h3>
+                    <p>Specialized installation services for Canal Plus and free-to-air channels antennas, ensuring optimal signal quality.</p>
+                </div>
+                <div class="service-detail fade-in">
+                    <img src="https://images.unsplash.com/photo-1603086888117-2c04e0a2e5c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Intercom System" class="service-image">
+                    <h3><i class="fas fa-door-open"></i> DoorBell Intercom (walk-in-talkin)</h3>
+                    <p>Installation of advanced intercom systems for enhanced security and communication.</p>
+                </div>
+                <div class="service-detail fade-in">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Installation" class="service-image">
+                    <h3><i class="fas fa-solar-panel"></i> Solar Installation</h3>
+                    <p>Eco-friendly solar power solutions to reduce energy costs and environmental impact.</p>
+                </div>
+                <div class="service-detail fade-in">
+                    <img src="https://images.unsplash.com/photo-1600566753051-475254d7b3e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AC Installation" class="service-image">
+                    <h3><i class="fas fa-wind"></i> AC Installation</h3>
+                    <p>Professional installation and maintenance of air conditioning systems for optimal comfort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Projects</h2>
+                <p>Take a look at some of our completed electrical projects</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1585730061512-300e343a2c28?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Commercial Wiring">
+                    <div class="project-overlay">
+                        <h3>Commercial Wiring</h3>
+                        <p>Office Building, Yaoundé</p>
+                    </div>
+                </div>
+                <div class="project-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1590622783539-5d5c5d6a0c2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Panel Installation">
+                    <div class="project-overlay">
+                        <h3>Solar Panel Installation</h3>
+                        <p>Residential Home, Yaoundé</p>
+                    </div>
+                </div>
+                <div class="project-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1562564053-93e8190c9e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CCTV Security System">
+                    <div class="project-overlay">
+                        <h3>CCTV Security System</h3>
+                        <p>Retail Store, Yaoundé</p>
+                    </div>
+                </div>
+                <div class="project-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1600566753051-475254d7b3e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AC System Installation">
+                    <div class="project-overlay">
+                        <h3>AC System Installation</h3>
+                        <p>Office Building, Yaoundé</p>
+                    </div>
+                </div>
+                <div class="project-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1596476390668-87b464c4a36a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Electrical System Maintenance">
+                    <div class="project-overlay">
+                        <h3>Electrical System Maintenance</h3>
+                        <p>Industrial Facility, Yaoundé</p>
+                    </div>
+                </div>
+                <div class="project-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1616046229471-5d5b4f5b0b0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Antenna Installation">
+                    <div class="project-overlay">
+                        <h3>Antenna Installation</h3>
+                        <p>Residential Building, Yaoundé</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="Project Image">
+            <span class="close-lightbox"><i class="fas fa-times"></i></span>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+<section id="contact" class="section contact-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for a free consultation and quote</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info fade-in">
+                <h3>Get In Touch</h3>
+                <div class="contact-detail">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+237 6 70 92 83 11</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Yaoundé, Cameroon</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Working Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        <p>Saturday: 9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p>Message us directly on WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form fade-in">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        <div class="error" id="nameError">Please enter your name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Your Email">
+                        <div class="error" id="emailError">Please enter a valid email address</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Your Phone" required>
+                        <div class="error" id="phoneError">Please enter a valid phone number</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        <div class="error" id="messageError">Please enter your message</div>
+                    </div>
+                    <button type="submit" class="btn">Send via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="join" style="display: flex;">
+                        <img src="IMG-20250819-WA0173.jpg" alt="Electrical Solutions Logo" class="footer-logo">
+                        <h4>Electrical Solutions</h4>
+                    </div>
+                    <p>Professional electrical services for residential and commercial clients in Yaoundé, Cameroon.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Electrical Maintenance</a></li>
+                        <li><a href="#services">Solar Installation</a></li>
+                        <li><a href="#services">CCTV Installation</a></li>
+                        <li><a href="#services">AC Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +237 6 70 92 83 11</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Yaoundé, Cameroon</li>
+                        <li><i class="fas fa-envelope"></i> electricalsolutions@gmial.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Electrical Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript will be placed here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a nav link
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Lightbox functionality for projects
+            const projectItems = document.querySelectorAll('.project-item');
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = document.querySelector('.lightbox-content img');
+            const closeLightbox = document.querySelector('.close-lightbox');
+            
+            projectItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.querySelector('img').src;
+                    lightboxImg.src = imgSrc;
+                    lightbox.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            closeLightbox.addEventListener('click', function() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            });
+            
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('open');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Form validation
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                
+                // Validate name
+                const nameInput = document.getElementById('name');
+                const nameError = document.getElementById('nameError');
+                
+                if (nameInput.value.trim() === '') {
+                    nameError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    nameError.style.display = 'none';
+                }
+                
+                // Validate email
+                const emailInput = document.getElementById('email');
+                const emailError = document.getElementById('emailError');
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (!emailPattern.test(emailInput.value)) {
+                    emailError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    emailError.style.display = 'none';
+                }
+                
+                // Validate phone
+                const phoneInput = document.getElementById('phone');
+                const phoneError = document.getElementById('phoneError');
+                
+                if (phoneInput.value.trim() === '') {
+                    phoneError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    phoneError.style.display = 'none';
+                }
+                
+                // Validate message
+                const messageInput = document.getElementById('message');
+                const messageError = document.getElementById('messageError');
+                
+                if (messageInput.value.trim() === '') {
+                    messageError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    messageError.style.display = 'none';
+                }
+                
+                // If form is valid, show success message (in a real application, you would submit the form)
+                if (isValid) {
+                    alert('Thank you for your message! We will get back to you soon.');
+                    contactForm.reset();
+                }
+            });
+            
+            // Fade-in animation on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            function checkFade() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100 && elementBottom > 0) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Initial check
+            checkFade();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkFade);
+            
+            // Sticky header
+            const header = document.querySelector('header');
+            const headerHeight = header.offsetHeight;
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                    header.style.backgroundColor = 'rgba(17, 17, 17, 0.95)';
+                } else {
+                    header.style.boxShadow = 'none';
+                    header.style.backgroundColor = 'rgba(17, 17, 17, 0.9)';
+                }
+            });
+        });
+    // Form validation and WhatsApp submission
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let isValid = true;
+        
+        // Validate name
+        const nameInput = document.getElementById('name');
+        const nameError = document.getElementById('nameError');
+        
+        if (nameInput.value.trim() === '') {
+            nameError.style.display = 'block';
+            isValid = false;
+        } else {
+            nameError.style.display = 'none';
+        }
+        
+        // Validate phone
+        const phoneInput = document.getElementById('phone');
+        const phoneError = document.getElementById('phoneError');
+        
+        if (phoneInput.value.trim() === '') {
+            phoneError.style.display = 'block';
+            isValid = false;
+        } else {
+            phoneError.style.display = 'none';
+        }
+        
+        // Validate message
+        const messageInput = document.getElementById('message');
+        const messageError = document.getElementById('messageError');
+        
+        if (messageInput.value.trim() === '') {
+            messageError.style.display = 'block';
+            isValid = false;
+        } else {
+            messageError.style.display = 'none';
+        }
+        
+        // If form is valid, send message via WhatsApp
+        if (isValid) {
+            // Format the message
+            const name = encodeURIComponent(nameInput.value.trim());
+            const email = encodeURIComponent(document.getElementById('email').value.trim());
+            const phone = encodeURIComponent(phoneInput.value.trim());
+            const message = encodeURIComponent(messageInput.value.trim());
+            
+            // Create WhatsApp message
+            const whatsappMessage = `New message from Electrical Solutions website:%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AMessage: ${message}`;
+            
+            // Your WhatsApp number (in international format without +)
+            const whatsappNumber = '237679968231';
+            
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+            
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, '_blank');
+            
+            // Optional: Show success message
+            alert('Thank you for your message! You will now be redirected to WhatsApp to complete sending your message.');
+            
+            // Reset the form
+            contactForm.reset();
+        }
+    });
+    </script>
+</body>
+</html>
